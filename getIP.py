@@ -10,6 +10,7 @@ class IpQuery:
 		
 	def getApiUrl(self):
 		# TODO
+		print('todo')
 		
 def main():
 	ipQuery = IpQuery()
