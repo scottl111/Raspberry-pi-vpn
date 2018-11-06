@@ -1,4 +1,4 @@
-# Class for querying the current machines IP address and pushing the resulting Ip address to a DNS server
+# Class for querying the current machines IP address and pushing the resulting IP address to a DNS server
 import requests
 
 class IpQuery:
@@ -36,3 +36,6 @@ def main():
 
 if __name__ == '__main__':
 	main()
+	# TODO in order to use requests it needs installing as it's not part of the standard python library. To do this, pip will need installing. See get-pip.py to install pip. 
+	# Once pip is installed, requests can be installed using the command 'python -m pip install requests'. Maybe with --user on the end if permissions are a problem. 
+	# This should then be good to go for running. 
