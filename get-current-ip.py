@@ -9,30 +9,29 @@ class IpQuery:
 	# The URL for updating the goggle DNS with the new IP address.
 	DNS_URL = 'https://httpbin.org/'
 
-	def getIpAddress(self):
+	def get_ip_address(self):
 		# Query the endpoint to grab the JSON, parse the IP Address and return it.
 		endpoint = requests.get(self.IFCONFIG_URL)
 		ipAddress = endpoint.text
 		return ipAddress
 		
-	def getApiUrl(self): 
+	def get_api_url(self): 
 		# todo
 		return self.DNS_URL
 		
-	def pushToDNS(self, url):
+	def push_url_to_dns(self, url):
 		payload = {'key','value'}
 		endpoint = requests.get(self.DNS_URL, params=payload)
 		print(endpoint)
 		
 def main():
 	# Create an instance of the ip query class. 
-	ipQuery = IpQuery()
+	ip_query = IpQuery()
 	
 	# Get the current IP address of the machine. Does it matter what type of address it is? - IPv4? IPv6? 
-	newIpAddress = ipQuery.getIpAddress()
-		
-	print(ipQuery.getApiUrl())
-	print(newIpAddress)
+	machines_ip = ip_query.get_ip_address()
+
+	print('''This machines IP address is ''' + machines_ip)
 
 if __name__ == '__main__':
 	main()
